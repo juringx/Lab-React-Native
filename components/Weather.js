@@ -68,5 +68,8 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color:'white',
         padding: 10
+    },
+    Tempe: {
+        
     }
 })

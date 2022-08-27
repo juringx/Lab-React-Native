@@ -6,8 +6,7 @@ export default function Forecast(props){
         <View>
             <Text style={styles.FontText}>{props.main}</Text>
             <Text style={styles.FontText}>{props.description}</Text>
-            <Text style={styles.FontText}>{props.temp}</Text>
-            <Text style={styles.FontText}>°C</Text>
+            <Text style={styles.Tempe}>{props.temp} °C</Text>
         </View>
     )
 }
@@ -17,5 +16,11 @@ const styles = StyleSheet.create({
         textAlign:'center',
         fontWeight:'400',
         textAlignVertical:'bottom'
+    },
+    Tempe: {
+        fontSize: 30,
+        textAlign:'center',
+        fontWeight:'bold',
+        margin: 10
     },
 })
