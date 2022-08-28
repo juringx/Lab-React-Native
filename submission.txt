@@ -1,0 +1,11 @@
+นายจุรินทร์ ไลยโฆษิต 6310110074
+
+Lab React Native 3SA04
+
+โปรแกรมนี้ สามารถดึงข้อมูลจากเว็ป openweather เพื่อเอาฐานข้อมูลต่างๆ มาใช้
+ในตัวของ React Native จะช่วยในการทำ mobile app 
+ได้ทำการใช้ Stack Navigator ในการสร้างหน้าจอเพิ่มขึ้นมาเป็น 2 หน้า
+คือ Home และ Weather ในส่วนของ หน้า Home จะสามารถเชื่อมต่อไปยังหน้า Weather
+ผ่านการกด TouchableHighlight ซึ่งจะ navigate ไปที่หน้า Weather พร้อมกับ zipCode
+แล้วทำการดึงฐานข้อมูลจากเว็ป openweather ตามค่า zipcode
+จะได้ข้อมูลแสดง สภาพอากาศมาได้ ทั้ง อุณหภูมิ feels like และ ความชื้น
