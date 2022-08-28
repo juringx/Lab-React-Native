@@ -13,7 +13,9 @@ export default function Weather(props){
                 setForecastInfo({
                     main: json.weather[0].main,
                     description: json.weather[0].description,
-                    temp: json.main.temp
+                    temp: json.main.temp,
+                    feels_like: json.main.feels_like,
+                    humidity: json.main.humidity,
                 });
             })
             .catch((error) => {
@@ -25,13 +27,15 @@ export default function Weather(props){
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        feels_like: 0,
+        humidity: 0,
     })
 
     return (
         <ImageBackground source={require('../back.jpg')} style={styles.backdrop}>
             <View style={styles.greyback}>
-                <Text style={styles.FontText}>Zip Code</Text>
+                <Text style={styles.FontText}>Zip Code{props.place}</Text>
                 <Text style={styles.Zipcode}>{props.zipCode}</Text>
                 <Forecast {...forecastInfo}/>
             </View>
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
     greyback:{
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         width:"100%", 
-        height:"30%", 
+        height:"60%", 
         paddingTop: Constants.statusBarHeight - 50,
         flexDirection:'column',
         justifyContent:'center',
@@ -70,6 +74,6 @@ const styles = StyleSheet.create({
         padding: 10
     },
     Tempe: {
-        
+
     }
 })
