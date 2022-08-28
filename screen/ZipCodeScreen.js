@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { FlatList, StatusBar, StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import { FlatList, ImageBackground, StatusBar, StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import React from "react";
 
 const availableZipItems = [
@@ -14,14 +14,16 @@ const availableZipItems = [
     { place: 'Phuket', code: '83000' },
 ]
 const ZipItem = ({place, code, navigation}) => (
-    <TouchableHighlight activeOpacity={0.5} underlayColor="grey" style={styles.TouchStyle} onPress={() => {
-        navigation.navigate('Weather', {zipCode: code})
-    }}>
-        <View style={styles.zipItem}>
-            <Text style={styles.FontText1}>{place}</Text>
-            <Text style={styles.FontText2}>{code}</Text>
-        </View>
-    </TouchableHighlight>
+    
+        <TouchableHighlight activeOpacity={0.5} underlayColor="grey" style={styles.TouchStyle} onPress={() => {
+            navigation.navigate('Weather', {zipCode: code})
+        }}>
+            <View style={styles.zipItem}>
+                <Text style={styles.FontText1}>{place}</Text>
+                <Text style={styles.FontText2}>{code}</Text>
+            </View>
+        </TouchableHighlight>
+    
     
 )
 
@@ -29,10 +31,13 @@ export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return (
         <View>
-            <FlatList
-                data = {availableZipItems}
-                keyExtractor = {item => item.code}
-                renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}/>
+            <ImageBackground source={require('../homebg.jpg')}>
+                <FlatList
+                    data = {availableZipItems}
+                    keyExtractor = {item => item.code}
+                    renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}/>
+            </ImageBackground>
+            
             <StatusBar style="auto" />
         </View>
     );
